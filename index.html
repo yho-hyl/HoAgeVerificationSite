@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Verification Website Assignment</title>
+</head>
+<body>
+
+    <h1 id="age" style="margin-bottom: 0px;">Enter your age: </h1>
+    <input type="text" id="ageInput" style="margin-top: 15px; margin-bottom: 15px;">
+    <br>
+    <button id="submitBtn">Submit</button>
+
+    <p id="resultText"></p>
+
+    <script>
+        const myText = document.getElementById("ageInput");
+        const mySubmit = document.getElementById("submitBtn");
+        const myResult = document.getElementById("resultText");
+        let age;
+        
+        mySubmit.onclick = function() {
+            age = myText.value;
+            age = Number(age);
+            
+            if (age <= 5 && age >= 0) {
+                myResult.textContent = "You are a toddler";
+
+            } else if (age <= 13 && age >= 0) {
+                myResult.textContent = "You are a preteen";
+
+            } else if (age <= 18 && age >= 0) {
+                myResult.textContent = "You are a young adult";
+
+            } else if (age < 65 && age >= 0) {
+                myResult.textContent = "You are middle-aged";
+
+            } else if (age >= 65){
+                myResult.textContent = "You are a senior";
+            } else {
+                myResult.textContent = "Invalid input. Please enter a number.";
+            }            
+        }
+
+
+    </script>
+</body>
+</html>
